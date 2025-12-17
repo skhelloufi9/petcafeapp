@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Visit — Paws & Beans Café</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Book a visit at Paws & Beans Café.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="paw" aria-hidden="true">🐾</span>
+        <span>Paws &amp; Beans</span>
+        <span class="sr-only">Home</span>
+      </a>
+
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="siteNav">
+        ☰ <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="siteNav" class="site-nav" aria-label="Primary">
+        <a href="menu.html">Menu</a>
+        <a href="events.html">Events</a>
+        <a href="visit.html">Visit</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="book" class="section alt">
+      <div class="container">
+        <h1>Book a Visit</h1>
+        <p class="section-lead">Reserve a 45‑minute slot. We’ll email confirmation.</p>
+
+        <form id="bookingForm" novalidate>
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required placeholder="Your full name" />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+
+            <label>
+              <span>Date</span>
+              <input type="date" name="date" required />
+            </label>
+
+            <label>
+              <span>Time</span>
+              <input type="time" name="time" required />
+            </label>
+
+            <label>
+              <span>Guests</span>
+              <input type="number" name="guests" min="1" max="6" value="1" required />
+            </label>
+
+            <label>
+              <span>Pet preference</span>
+              <select name="preference">
+                <option value="any">Any</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+              </select>
+            </label>
+          </div>
+
+          <!-- Order from Menu (moved into center grid to match site UI) -->
+          <label class="order-toggle" style="display:block; margin:1rem 0 0;">
+            <input type="checkbox" id="orderToggle" name="orderToggle"> I want to order from the menu
+          </label>
+
+          <div id="orderSection" class="grid order-grid" style="display:none; margin-top:.8rem;">
+            <article class="card">
+              <label class="order-item">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:.5rem;">
+                  <div>
+                    <strong>House Latte ☕</strong>
+                    <div class="small">Silky, balanced</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">£3.20</div>
+                    <div><input type="checkbox" name="order_items" data-key="house_latte" value="House Latte|3.20"></div>
+                  </div>
+                </div>
+                <input type="number" name="qty_house_latte" min="1" value="1" class="qty-input">
+              </label>
+            </article>
+
+            <article class="card">
+              <label class="order-item">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:.5rem;">
+                  <div>
+                    <strong>Pup-accino 🦴</strong>
+                    <div class="small">Pup-safe treat</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">£1.50</div>
+                    <div><input type="checkbox" name="order_items" data-key="pup_accino" value="Pup-accino|1.50"></div>
+                  </div>
+                </div>
+                <input type="number" name="qty_pup_accino" min="1" value="1" class="qty-input">
+              </label>
+            </article>
+
+            <article class="card">
+              <label class="order-item">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:.5rem;">
+                  <div>
+                    <strong>Catnip Tea 🌿</strong>
+                    <div class="small">Herbal blend</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">£2.80</div>
+                    <div><input type="checkbox" name="order_items" data-key="catnip_tea" value="Catnip Tea|2.80"></div>
+                  </div>
+                </div>
+                <input type="number" name="qty_catnip_tea" min="1" value="1" class="qty-input">
+              </label>
+            </article>
+
+            <article class="card">
+              <label class="order-item">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:.5rem;">
+                  <div>
+                    <strong>Chewy Cookie 🍪</strong>
+                    <div class="small">Fresh baked goodness</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">£2.20</div>
+                    <div><input type="checkbox" name="order_items" data-key="chewy_cookie" value="Chewy Cookie|2.20"></div>
+                  </div>
+                </div>
+                <input type="number" name="qty_chewy_cookie" min="1" value="1" class="qty-input">
+              </label>
+            </article>
+          </div>
+
+          <button type="submit" class="btn">Request Booking</button>
+          <p id="formMsg" role="status" class="form-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Paws &amp; Beans Café</p>
+      <p class="social"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

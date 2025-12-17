@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paws & Beans Café — Pet Café</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Paws & Beans Café — Sip coffee, cuddle cats and dogs, and book cozy visits.">
+</head>
+<body>
+  <!-- Skip link removed per request -->
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <span class="paw" aria-hidden="true">🐾</span>
+        <span>Paws &amp; Beans</span>
+        <span class="sr-only">Home</span>
+      </a>
+
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="siteNav">
+        ☰ <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="siteNav" class="site-nav" aria-label="Primary">
+        <a href="menu.html">Menu</a>
+        <a href="events.html">Events</a>
+        <a href="visit.html">Visit</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Sip coffee. Cuddle pets.</h1>
+          <p>Welcome to <strong>Paws &amp; Beans</strong>—a cozy spot for great brews and furry friends.</p>
+          <div class="hero-cta">
+            <a href="menu.html" class="btn">See Menu</a>
+            <a href="book.html" class="btn btn-ghost">Book a Visit</a>
+          </div>
+          <p class="note">Friendly, supervised interactions. Walk-ins welcome when space allows.</p>
+        </div>
+        <div class="hero-art" role="img" aria-label="Illustration of a pet café with cats, dogs, and coffee">
+          <div class="sticker sticker-1">🐶</div>
+          <div class="sticker sticker-2">🐱</div>
+          <div class="sticker sticker-3">☕</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <div class="container">
+        <h2>Menu</h2>
+        <p class="section-lead">Something for humans and treats for our four‑legged guests.</p>
+
+        <div class="grid">
+            <article class="card">
+            <h3>House Latte <span aria-hidden="true">☕</span></h3>
+            <p>Silky, balanced, and comforting.</p>
+            <p class="price">£3.20</p>
+            </article>
+
+            <article class="card">
+            <h3>Pup‑accino <span aria-hidden="true">🦴</span></h3>
+            <p>Whipped cream in a pup-safe cup.</p>
+            <p class="price">£1.50</p>
+            </article>
+
+            <article class="card">
+            <h3>Catnip Tea <span aria-hidden="true">🌿</span></h3>
+            <p>Herbal blend; cats get a sniff sample.</p>
+            <p class="price">£2.80</p>
+            </article>
+
+            <article class="card">
+            <h3>Chewy Cookie <span aria-hidden="true">🍪</span></h3>
+            <p>Fresh baked goodness. (Human!)</p>
+            <p class="price">£2.20</p>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="section alt">
+      <div class="container">
+        <h2>Events</h2>
+        <ul class="list">
+          <li><strong>Cuddle Hour</strong>: Daily at 11:00 &amp; 16:00 (pre‑book to guarantee a spot)</li>
+          <li><strong>Adoption Weekend</strong>: First Sat/Sun each month with local shelters</li>
+          <li><strong>Quiet Time</strong>: 14:00–15:00 (reduced capacity for shy pets)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section id="visit" class="section">
+      <div class="container">
+        <h2>Visit Us</h2>
+        <div class="visit-layout">
+          <div>
+            <p><strong>Address</strong><br>123 Whisker Lane, Petborough</p>
+            <p><strong>Hours</strong><br>Mon–Sun: 10:00–19:00</p>
+            <p><strong>House Rules</strong></p>
+            <ol>
+              <li>Sanitize hands before/after petting.</li>
+              <li>Let pets come to you—no picking up.</li>
+              <li>No outside treats; ask staff first.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="book" class="section alt">
+      <div class="container">
+        <h2>Book a Visit</h2>
+        <p class="section-lead">Reserve a 45‑minute slot. We’ll email confirmation.</p>
+
+        <form id="bookingForm" novalidate>
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required placeholder="Your full name" />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+
+            <label>
+              <span>Date</span>
+              <input type="date" name="date" required />
+            </label>
+
+            <label>
+              <span>Time</span>
+              <input type="time" name="time" required />
+            </label>
+
+            <label>
+              <span>Guests</span>
+              <input type="number" name="guests" min="1" max="6" value="1" required />
+            </label>
+
+            <label>
+              <span>Pet preference</span>
+              <select name="preference">
+                <option value="any">Any</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit" class="btn">Request Booking</button>
+          <p id="formMsg" role="status" class="form-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Paws &amp; Beans Café</p>
+      <p class="social">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
